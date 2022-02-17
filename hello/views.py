@@ -26,7 +26,7 @@ def index(request):
  plt.savefig(response, format="png")
  plt.close(fig)
 
- return response
+ return response 
 
 
  
