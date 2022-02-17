@@ -10,7 +10,7 @@ def index(request):
  #if res.status_code == 200: # check that the request went through
   # return HttpResponse( res.content)
 #return ( res.content)
- response = HttpResponse(content_type="image/png")
+
  
   
 # creating plotting data
@@ -24,8 +24,13 @@ def index(request):
   
 # saving the file.Make sure you 
 # use savefig() before show().
- plt.savefig(response,"squares.png")
-  
+ plt.savefig("squares.png")
+     buf = io.BytesIO()
+    plt.savefig(buf, format='png')
+    plt.close(fig)
+
+    response = HttpResponse(buf.getvalue(), content_type='image/png')
+    return response
  #plt.show()
 
  return response
