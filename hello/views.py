@@ -25,12 +25,12 @@ def index(request):
 # saving the file.Make sure you 
 # use savefig() before show().
  plt.savefig("squares.png")
-     buf = io.BytesIO()
-    plt.savefig(buf, format='png')
-    plt.close(fig)
+ buf = io.BytesIO()
+ plt.savefig(buf, format='png')
+ plt.close(fig)
 
-    response = HttpResponse(buf.getvalue(), content_type='image/png')
-    return response
+ response = HttpResponse(buf.getvalue(), content_type='image/png')
+ return response
  #plt.show()
 
  return response
