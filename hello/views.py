@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
+import io
 import requests
 import matplotlib.pyplot as plt
   # print the entire html, should maintain internal newlines so that when it print to screen it isn't on a single line
