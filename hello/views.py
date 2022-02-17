@@ -33,7 +33,7 @@ def index(request):
 # create your image as usual, e.g. pylab.plot(...)
  #plt.imshow(x_train[0])
  plt.savefig(response, format="png")
- return HttpResponse( response)  
+ return response
  
 
 
