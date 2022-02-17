@@ -31,7 +31,7 @@ def index(request):
  (x_train,y_train),(x_test,y_test)=mnist.load_data()
  response = HttpResponse(content_type="image/png")
 # create your image as usual, e.g. pylab.plot(...)
- plt.imshow((x_train[0]))
+ plt.imshow(x_train[0],y_train[0])
  plt.savefig(response, format="png")
  return HttpResponse( response)  
  
