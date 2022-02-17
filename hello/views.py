@@ -3,6 +3,7 @@ from django.http import HttpResponse
 import io
 import requests
 import matplotlib.pyplot as plt
+import tensorflow as tf
   # print the entire html, should maintain internal newlines so that when it print to screen it isn't on a single line
 def index(request):
  
@@ -26,9 +27,11 @@ def index(request):
  plt.savefig(response, format="png")
 
 
- return response 
+# return response 
 
-
+mnist=tf.keras.datasets.mnist
+(x_train,y_train),(x_test,y_test)=mnist_load()
+return  HttpResponse( str(x_train)) 
  
 
 
