@@ -22,7 +22,7 @@ def index(request):
 # saving the file.Make sure you 
 # use savefig() before show().
  plt.savefig("squares.png")
- byte buf 
+ buf= bytes("", 'utf-8')
  plt.savefig(buf, format='png')
  plt.close(fig)
 
