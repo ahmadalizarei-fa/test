@@ -16,22 +16,24 @@ def index(request):
  yaxis =[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
   
 # plotting 
- plt.plot(xaxis, yaxis)
- plt.xlabel("X")
- plt.ylabel("Y")
+ #plt.plot(xaxis, yaxis)
+ #plt.xlabel("X")
+ #plt.ylabel("Y")
   
 # saving the file.Make sure you 
 # use savefig() before show().
- response = HttpResponse(content_type="image/png")
-# create your image as usual, e.g. pylab.plot(...)
- plt.savefig(response, format="png")
+
 
 
 # return response 
 
  mnist=tf.keras.datasets.mnist
  (x_train,y_train),(x_test,y_test)=mnist.load_data()
- return  HttpResponse( str(x_train[0]))  
+ response = HttpResponse(content_type="image/png")
+# create your image as usual, e.g. pylab.plot(...)
+ plt.imshow((x_train[0]))
+ plt.savefig(response, format="png")
+ return HttpResponse( str)  
  
 
 
