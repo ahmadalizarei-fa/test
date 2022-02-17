@@ -16,9 +16,9 @@ def index(request):
  yaxis =[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
   
 # plotting 
- plt.plot(xaxis, yaxis)
- plt.xlabel("X")
- plt.ylabel("Y")
+ #plt.plot(xaxis, yaxis)
+ #plt.xlabel("X")
+ #plt.ylabel("Y")
   
 # saving the file.Make sure you 
 # use savefig() before show().
@@ -31,7 +31,7 @@ def index(request):
  (x_train,y_train),(x_test,y_test)=mnist.load_data()
  response = HttpResponse(content_type="image/png")
 # create your image as usual, e.g. pylab.plot(...)
- #plt.imshow(x_train[0])
+ plt.imshow(x_train[0])
  plt.savefig(response, format="png")
  return response
  
