@@ -10,7 +10,7 @@ def index(request):
  #if res.status_code == 200: # check that the request went through
   # return HttpResponse( res.content)
 #return ( res.content)
- response = HttpResponse(mimetype="image/png")
+ response = HttpResponse(content_type="image/png")
  
   
 # creating plotting data
