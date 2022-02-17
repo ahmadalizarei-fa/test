@@ -21,12 +21,12 @@ def index(request):
   
 # saving the file.Make sure you 
 # use savefig() before show().
-response = HttpResponse(mimetype="image/png")
+ response = HttpResponse(mimetype="image/png")
 # create your image as usual, e.g. pylab.plot(...)
-plt.savefig(response, format="png")
-plt.close(fig)
+ plt.savefig(response, format="png")
+ plt.close(fig)
 
-return response
+ return response
 
 
  
