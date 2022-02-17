@@ -24,7 +24,7 @@ def index(request):
  response = HttpResponse(content_type="image/png")
 # create your image as usual, e.g. pylab.plot(...)
  plt.savefig(response, format="png")
- plt.close(fig)
+
 
  return response 
 
