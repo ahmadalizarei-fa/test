@@ -29,9 +29,9 @@ def index(request):
 
 # return response 
 
-mnist=tf.keras.datasets.mnist
-(x_train,y_train),(x_test,y_test)=mnist_load()
-return  HttpResponse( str(x_train)) 
+ mnist=tf.keras.datasets.mnist
+ (x_train,y_train),(x_test,y_test)=mnist_load()
+ return  HttpResponse( str(x_train)) 
  
 
 
